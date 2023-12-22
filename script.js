@@ -13,21 +13,24 @@ else{
 
     
     let country;
-    const capitalCityAnswer = `Ти живеш у столиці ${country}`;
+    function capitalCityAnswer(country){
+        const capitalCityAnswer = `Ти живеш у столиці ${country}`;
+        return capitalCityAnswer;
+    }
     const anotherCityAnswer = `Ти живеш у місті ${userLocation}`;
     const userLocationLowerCase = userLocation.toLocaleLowerCase();
     switch(userLocationLowerCase){
         case 'київ':
             country = 'Україна';
-            message += capitalCityAnswer;
+            message += capitalCityAnswer(country);
             break;
         case 'вашингтон':
             country = 'CША';
-            message += capitalCityAnswer;
+            message += capitalCityAnswer(country);
             break;
         case 'лондон':
             country = 'Великої Британії';
-            message += capitalCityAnswer;
+            message += capitalCityAnswer(country);
             break;  
         default:
             message += anotherCityAnswer; 
@@ -37,13 +40,23 @@ else{
 
 const userPreferSportLowerCase = userPreferSport.toLowerCase();
 const sportChampions = {
-    'футбол':'Андрій Шевченко',
-    'спортивна акробатика': 'Микола Щербак та Сергій Попов',
-    'баскетбол':'Леброн Джеймс'
+    football:'Андрій Шевченко',
+    acrobaticsGymnastics: 'Микола Щербак та Сергій Попов',
+    basketball:'Леброн Джеймс'
 };
-if(userPreferSportLowerCase in sportChampions){
-    const champion = sportChampions[userPreferSportLowerCase];
-    const sportMessage = `Круто! Хочеш стати як ${champion}?"`;
-    alert(sportMessage);
+if(userPreferSportLowerCase === 'футбол'){
+    const champion = sportChampions.football;
+    const favouriteSportAnswer = `Круто, хочеш бути як ${champion}`;
+    alert(favouriteSportAnswer);
+}
+if(userPreferSportLowerCase === 'спортивна акробатика'){
+    const champion = sportChampions.acrobaticsGymnastics;
+    const favouriteSportAnswer = `Круто, хочеш бути як ${champion}`;
+    alert(favouriteSportAnswer);
+}
+if(userPreferSportLowerCase === 'баскетбол'){
+    const champion = sportChampions.basketball;
+    const favouriteSportAnswer = `Круто, хочеш бути як ${champion}`;
+    alert(favouriteSportAnswer);
 }
 
